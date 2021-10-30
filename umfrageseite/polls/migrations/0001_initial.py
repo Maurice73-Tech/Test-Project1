@@ -30,4 +30,9 @@ class Migration(migrations.Migration):
                 ('poll', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='polls.poll')),
             ],
         ),
+        migrations.AddField(
+            model_name='choice',
+            name='poll',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='polls.Poll'),
+        ),
     ]
