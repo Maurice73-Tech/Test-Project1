@@ -14,4 +14,4 @@ class Choice(models.Model):
     notes = models.TextField(null=True, blank = True)
 
     def __str__(self):
-        return "{0}: {1})".format(self.poll, self.name)
+        return "{0}: {1})".format(self.poll.name, self.name)
