@@ -12,4 +12,4 @@ def index(request):
         for antwortwortmoeglichkeit in umfrage.choice_set.all():
             serverantwort += antwortwortmoeglichkeit.name + " ,"
         serverantwort += ")"
-    return HttpResponse("Hallo Welt!")
+    return HttpResponse(serverantwort)
