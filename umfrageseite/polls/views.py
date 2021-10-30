@@ -5,7 +5,7 @@ from django.http import HttpResponse
 from .models import Poll
 
 def index(request):
-    antwort = ""
+    antwort = " "
     for umfrage in Poll.objects.all():
-        antwort = antwort + " " + umfrage.name
+        antwort = antwort + "<br /> " + umfrage.name
     return HttpResponse("Hallo Welt!")
