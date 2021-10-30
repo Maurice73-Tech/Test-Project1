@@ -7,5 +7,9 @@ from .models import Poll
 def index(request):
     antwort = " "
     for umfrage in Poll.objects.all():
-        antwort = antwort + "<br /> " + umfrage.name
+        serverantwort = serverantwort + "<br />"
+        serverantwort += umfrage.name + " ("
+        for antwortwortmoeglichkeit in umfrage.choice_set.all():
+            serverantwort += antwortwortmoeglichkeit.name + " ,"
+        serverantwort += ")"
     return HttpResponse("Hallo Welt!")
