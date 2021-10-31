@@ -6,9 +6,12 @@
     </head>
     <body>
         <h1>Umfrageseite</h1>
+        {% if umfrage %}
         <ul>
-            <li>Umfrage 1</li>
-            <li>Umfrage 2</li>
+            {% for umfrage in umfrage %}
+            <li>{{ umfrage.name }}</li>
+            {% endfor %}
         </ul>
+        {% endif %}
     </body>
 </html>
